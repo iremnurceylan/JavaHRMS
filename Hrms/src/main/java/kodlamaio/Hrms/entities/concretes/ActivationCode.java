@@ -1,6 +1,7 @@
 package kodlamaio.Hrms.entities.concretes;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,8 +35,10 @@ public class ActivationCode {
 	@Column(name="is_confirmed",columnDefinition="boolean default false")//?
 	private boolean isConfirmed;
 	
-	@Column(name="confirmed_date",columnDefinition="Date default CURRENT_DATE")//?
-	private LocalDateTime confirmedDate =LocalDateTime.now();
+	@Column(name="confirmed_date")
+	private Instant confirmedDate=Instant.now();
+	//private LocalDate confirmedDate=LocalDate.now();
+	
 
 	
 }

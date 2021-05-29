@@ -2,8 +2,7 @@ package kodlamaio.Hrms.entities.concretes;
 
 
 
-import java.sql.Date;
-
+import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +38,7 @@ public class User {
 	private String password;
 	
 	@Column(name="created_at")
-	private Date createdAt ;
+	private Instant createdAt=Instant.now();//Şimdiki zamanı verir..
 	
 	//Şimdiki tarihi olusturma burdan devam !
 	

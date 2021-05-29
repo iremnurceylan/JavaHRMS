@@ -2,7 +2,8 @@ package kodlamaio.Hrms.entities.concretes;
 
 
 
-import java.sql.Date;
+
+import java.time.Instant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,11 +34,11 @@ public class EmployerActivationByEmployee {
 	@Column(name="confirmed_employee_id")
 	private int confirmedEmployeeId;
 	
-	@Column(name="is_confirmed",columnDefinition="boolean default false")//?
+	@Column(name="is_confirmed",columnDefinition="boolean default false")//ilk atama false
 	private boolean isConfirmed;
 	
-	@Column(name="confirmed_date")//ActivationCode ile aynı?
-	private Date confirmedDate;
+	@Column(name="confirmed_date")
+	private Instant confirmedDate =Instant.now();
 	
 
 	
