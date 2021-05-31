@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="job_positions")
+//@JsonIgnoreProperties({"hibernateLazyInitializer","handler","job_postings"})
 public class JobPosition {
 	
 	@Id
@@ -29,7 +32,7 @@ public class JobPosition {
 	@Column(name="position")
 	private String position;
 	
-	
+	@JsonIgnore //Satır 24 calısmadıgı ıcın sonsuz donguye girmemisi icin bunu ekledım
 	@OneToMany(mappedBy = "jobPosition")
 	private List<JobPosting> jobPosting; // bir iş birden fazla ilan
 	

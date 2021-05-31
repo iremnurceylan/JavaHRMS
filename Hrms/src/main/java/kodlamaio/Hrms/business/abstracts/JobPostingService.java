@@ -1,5 +1,6 @@
 package kodlamaio.Hrms.business.abstracts;
 
+
 import java.util.List;
 
 import kodlamaio.Hrms.core.utilities.results.DataResult;
@@ -13,6 +14,7 @@ public interface JobPostingService {
 	Result add(JobPosting jobPosting);//iş ilanı ekleme
 	Result delete(JobPosting jobPosting);//iş ilanı silme
 	Result update(JobPosting jobPosting);//iş ilanı güncelleme
-	
+	DataResult<List<JobPosting>> getAllSorted(); // Aktif İş ilanlarını tarihe gore yakından uzaga sıralasın
+
 
 }

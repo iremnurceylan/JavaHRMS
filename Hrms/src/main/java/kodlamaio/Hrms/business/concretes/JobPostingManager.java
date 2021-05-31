@@ -3,6 +3,7 @@ package kodlamaio.Hrms.business.concretes;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import kodlamaio.Hrms.business.abstracts.JobPostingService;
@@ -58,6 +59,13 @@ public class JobPostingManager implements JobPostingService{
 	public Result update(JobPosting jobPosting) {
 		this.jobPostingDao.save(jobPosting);
 		return new SuccessResult("İş ilanı başarıyla güncellendi");
+	}
+
+	//Yeni ekledım iş ilanları yakın tarıhten uzaga dogru sıralandı
+	@Override
+	public DataResult<List<JobPosting>> getAllSorted() {
+		Sort sort = Sort.by(Sort.Direction.ASC,"deadlineDate");
+		return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.findAll(sort), "Yakın tarihli iş ilanları listelendi");
 	}
 
 }

@@ -12,6 +12,6 @@ public interface JobPostingDao extends JpaRepository<JobPosting, Integer> {
 	List<JobPosting> getByActiveTrueOrderByCreatedAt();//iş ilanı aktif olanlar tarihe göre listelenir
 	//@Query("From JobPosting where isOpen = true and employer_id=:id")
 	List<JobPosting> getByActiveTrueAndEmployer_companyName(String companyName);//bir firmaya ait aktif iş ilanları listelenir
-
+	
 	
 }

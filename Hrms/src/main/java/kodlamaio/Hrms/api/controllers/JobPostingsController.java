@@ -56,5 +56,10 @@ public class JobPostingsController {
 	  return this.jobPostingService.getByIsActiveTrueAndEmployer_companyName(companyName);
 	}
 	
+	@GetMapping("/getAllASC")
+	public DataResult<List<JobPosting>> getAllSorted(){
+		return this.jobPostingService.getAllSorted();
+	}
+	
 
 }
