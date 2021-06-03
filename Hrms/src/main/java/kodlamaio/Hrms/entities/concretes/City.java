@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name="cities")
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","job_postings"}) //çalısmıyor
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","job_postings"}) //çalısmadı :(
 public class City {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

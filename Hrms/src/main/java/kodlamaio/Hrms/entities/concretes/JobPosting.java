@@ -26,6 +26,7 @@ public class JobPosting {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
+
 	@Column(name="id")
 	private int id;
 	
@@ -58,17 +59,19 @@ public class JobPosting {
 	
 	//@Column(name="employer_id")
 	//private int employerId;
-	
+
 	@ManyToOne()
 	@JoinColumn(name= "city_id")
-	private City city; //Çok ilan tek sehir (36-37 satır kalkar)
+	private City city; //Çok ilan tek şehir 36-37 satır kalkar
 	
 	@ManyToOne()
 	@JoinColumn(name= "employer_id")
-	private Employer employer; //Bir iş veren cok ilan (57-58 kalkar)
-	
+	private Employer employer;//Bir iş veren çok ilan
+
 	@ManyToOne()
 	@JoinColumn(name="job_position_id")
-	private JobPosition jobPosition; //30-31 kalkar
+	private JobPosition jobPosition;
+	
+	
 
 }

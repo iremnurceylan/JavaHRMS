@@ -14,6 +14,7 @@ import kodlamaio.Hrms.business.abstracts.JobPostingService;
 import kodlamaio.Hrms.core.utilities.results.DataResult;
 import kodlamaio.Hrms.core.utilities.results.Result;
 import kodlamaio.Hrms.entities.concretes.JobPosting;
+import kodlamaio.Hrms.entities.dtos.JobPostingDto;
 
 @RestController
 @RequestMapping("/api/jobpostings")
@@ -46,19 +47,25 @@ public class JobPostingsController {
 		return this.jobPostingService.update(jobPosting);
 	}
 	
-	@GetMapping("/getByIsActiveTrueOrderByCreatedAt")
-	public DataResult<List<JobPosting>> getByIsActiveTrueOrderByCreatedAt(){
-		return this.jobPostingService.getByIsActiveTrueOrderByCreatedAt();
-		}
+	//@GetMapping("/getByIsActiveTrueOrderByCreatedAt")
+	//public DataResult<List<JobPosting>> getByIsActiveTrueOrderByCreatedAt(){
+	//	return this.jobPostingService.getByIsActiveTrueOrderByCreatedAt();
+	//	}
 	
 	@GetMapping("/getByIsActivateTrueAndEmployer_CompanyName")
 	public DataResult<List<JobPosting>> getByIsActiveTrueAndEmployer_companyName(@RequestParam String companyName){
 	  return this.jobPostingService.getByIsActiveTrueAndEmployer_companyName(companyName);
 	}
 	
-	@GetMapping("/getAllASC")
-	public DataResult<List<JobPosting>> getAllSorted(){
-		return this.jobPostingService.getAllSorted();
+	@GetMapping("/getAllSortedIsActiveTrueAndCreatedAtASC")
+	public DataResult<List<JobPosting>> getAllSortedIsActiveTrueAndCreatedAt(){
+		return this.jobPostingService.getAllSortedIsActiveTrueAndCreatedAt();
+	}
+	
+	//Yeni
+	@GetMapping("/getJobPostingWithEmployerDetails")
+	public DataResult<List<JobPostingDto>> getJobPostingWithEmployerDetails(){
+		return this.jobPostingService.getJobPostingWithEmployerDetails();
 	}
 	
 

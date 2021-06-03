@@ -13,6 +13,7 @@ import kodlamaio.Hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.Hrms.core.utilities.results.SuccessResult;
 import kodlamaio.Hrms.dataAccess.abstracts.JobPostingDao;
 import kodlamaio.Hrms.entities.concretes.JobPosting;
+import kodlamaio.Hrms.entities.dtos.JobPostingDto;
 
 @Service
 public class JobPostingManager implements JobPostingService{
@@ -30,11 +31,11 @@ public class JobPostingManager implements JobPostingService{
 		// null;
 	}
 
-	@Override
-	public DataResult<List<JobPosting>> getByIsActiveTrueOrderByCreatedAt() {
-		return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.getByActiveTrueOrderByCreatedAt(), "Listelendi");
+//	@Override 01.06 tarihinde sildim
+	//public DataResult<List<JobPosting>> getByIsActiveTrueOrderByCreatedAt() {
+	//	return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.getByActiveTrueOrderByCreatedAt(), "Listelendi");
 		//return null;
-	}
+	//}
 	
 	@Override
      public DataResult<List<JobPosting>> getByIsActiveTrueAndEmployer_companyName(String companyName ) {
@@ -63,9 +64,15 @@ public class JobPostingManager implements JobPostingService{
 
 	//Yeni ekledım iş ilanları yakın tarıhten uzaga dogru sıralandı
 	@Override
-	public DataResult<List<JobPosting>> getAllSorted() {
+	public DataResult<List<JobPosting>> getAllSortedIsActiveTrueAndCreatedAt() {
 		Sort sort = Sort.by(Sort.Direction.ASC,"deadlineDate");
 		return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.findAll(sort), "Yakın tarihli iş ilanları listelendi");
+	}
+	
+   //Dto yeni
+	@Override
+	public DataResult<List<JobPostingDto>> getJobPostingWithEmployerDetails() {
+		return new SuccessDataResult<List<JobPostingDto>>(this.jobPostingDao.getJobPostingWithEmployerDetails(),"iş ilanlari listelendi");
 	}
 
 }

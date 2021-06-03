@@ -10,6 +10,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","job_postings"})ÇALIŞMIYOR
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","job_postings"})
 @PrimaryKeyJoinColumn(name="user_id")
 @Table(name="employers")
 public class Employer extends User {
