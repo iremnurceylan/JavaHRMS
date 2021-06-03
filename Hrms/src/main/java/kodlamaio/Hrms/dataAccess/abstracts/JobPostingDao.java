@@ -16,13 +16,12 @@ public interface JobPostingDao extends JpaRepository<JobPosting, Integer> {
 	List<JobPosting> getByActiveTrueAndEmployer_companyName(String companyName);//bir firmaya ait aktif iş ilanları listelenir
 	  
 	//@Query(value = "Select new kodlamaio.Hrms.entities.dtos.JobPostingDto(j.id,j.description,j.openPositionCount,j.salaryMax,j.salaryMin,j.deadlineDate,j.createdAt,e.companyName) From Employer e inner join e.jobPostings j", nativeQuery = true)
-//	@Query("SELECT new kodlamaio.Hrms.entities.dtos.JobPostingDto(e.companyName,jb.position,j.openPositionCount,j,description,j.salaryMax,j.salaryMin,j.deadlineDate,j.createdAt,c.name)" +
+	//@Query("SELECT new kodlamaio.Hrms.entities.dtos.JobPostingDto(e.companyName,jb.position,j.openPositionCount,j,description,j.salaryMax,j.salaryMin,j.deadlineDate,j.createdAt)" +
 	//"FROM JobPosting j" +
    //  " INNER JOIN j.jobPosition jb" +
-	//" INNER JOİN j.city c" +
    //  " INNER JOIN j.employer e ") 
 	
-	@Query("Select new kodlamaio.hrms.entities.dtos.JobPostingDto(e.companyName, jp.position, j.openPositionCount, j.createdAt, j.salaryMax,j.salaryMin,j.deadlineDate From JobPosting j Inner Join j.employer e Inner Join j.jobPosition jp")
+	@Query("Select new kodlamaio.Hrms.entities.dtos.JobPostingDto(e.companyName, jp.position, j.openPositionCount, j.createdAt,j.description,j.salaryMax,j.salaryMin,j.deadlineDate From JobPosting j Inner Join j.employer e Inner Join j.jobPosition jp")
 	List<JobPostingDto> getJobPostingWithEmployerDetails();
 	
 }

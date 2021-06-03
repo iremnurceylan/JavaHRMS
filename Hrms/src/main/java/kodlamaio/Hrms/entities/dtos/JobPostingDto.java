@@ -20,6 +20,6 @@ public class JobPostingDto {
 	private double salaryMin;
 	private Date deadlineDate;
 	private Instant createdAt;
-	private String name;
+	//private String name;
 	
 }
