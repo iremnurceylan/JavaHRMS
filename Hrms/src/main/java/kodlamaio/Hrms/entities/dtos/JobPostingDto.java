@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class JobPostingDto {
-     private int id;
+    private int id;
 	private String companyName;
 	private String position;
 	private int openPositionCount;
 	private String description;
 	private double  salaryMax;
 	private double salaryMin;
-     private Instant deadlineDate; // bu kısım sorun olustumakta  
+    private Instant deadlineDate;
 	private String cityName;
 	
 }
