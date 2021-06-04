@@ -1,5 +1,6 @@
 package kodlamaio.Hrms.entities.concretes;
 
+
 import java.sql.Date;
 
 import javax.persistence.Column;

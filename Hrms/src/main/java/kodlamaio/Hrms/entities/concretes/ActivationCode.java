@@ -37,7 +37,7 @@ public class ActivationCode {
 	
 	@Column(name="confirmed_date")
 	private Instant confirmedDate=Instant.now();
-	//private LocalDate confirmedDate=LocalDate.now();
+	
 	
 
 	
