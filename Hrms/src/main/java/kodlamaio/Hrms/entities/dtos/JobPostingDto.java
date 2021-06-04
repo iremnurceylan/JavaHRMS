@@ -1,7 +1,7 @@
 package kodlamaio.Hrms.entities.dtos;
 
 
-import java.sql.Date;
+
 import java.time.Instant;
 
 
@@ -20,8 +20,7 @@ public class JobPostingDto {
 	private String description;
 	private double  salaryMax;
 	private double salaryMin;
-    //private Date deadlineDate; // bu kısım sorun olustumakta  
-    private Instant createdAt;
+     private Instant deadlineDate; // bu kısım sorun olustumakta  
 	private String cityName;
 	
 }

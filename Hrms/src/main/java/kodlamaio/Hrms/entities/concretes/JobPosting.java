@@ -2,7 +2,7 @@ package kodlamaio.Hrms.entities.concretes;
 
 import java.time.Instant;
 
-import java.sql.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,10 +50,7 @@ public class JobPosting {
 	private int openPositionCount;
 	
 	@Column(name="deadline_date")
-	private Date deadlineDate;
-	
-	@Column(name="created_at")
-	private Instant createdAt = Instant.now();
+	private Instant deadlineDate;
 	
 	@Column(name="is_active",columnDefinition = "boolean default true")
     private boolean active = true;

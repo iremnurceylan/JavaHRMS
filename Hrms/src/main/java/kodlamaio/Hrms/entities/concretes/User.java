@@ -40,7 +40,6 @@ public class User {
 	@Column(name="created_at")
 	private Instant createdAt=Instant.now();//Şimdiki zamanı verir..
 	
-	//Şimdiki tarihi olusturma burdan devam !
 	
 }
 	

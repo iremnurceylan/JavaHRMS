@@ -61,8 +61,8 @@ public class JobPostingsController {
 	public DataResult<List<JobPosting>> getAllSortedIsActiveTrueAndCreatedAt(){
 		return this.jobPostingService.getAllSortedIsActiveTrueAndCreatedAt();
 	}
+
 	
-	//Yeni
 	@GetMapping("/getJobPostingWithEmployerDetails")
 	public DataResult<List<JobPostingDto>> getJobPostingWithEmployerDetails(){
 		return this.jobPostingService.getJobPostingWithEmployerDetails();

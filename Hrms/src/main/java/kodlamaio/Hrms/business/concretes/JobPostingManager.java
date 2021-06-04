@@ -28,7 +28,6 @@ public class JobPostingManager implements JobPostingService{
 	@Override
 	public DataResult<List<JobPosting>> getByIsActiveTrue() {
 	  return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.getByActiveTrue(), "Tüm aktif iş ilanları listelendi");
-		// null;
 	}
 
 //	@Override 01.06 tarihinde sildim
@@ -40,7 +39,6 @@ public class JobPostingManager implements JobPostingService{
 	@Override
      public DataResult<List<JobPosting>> getByIsActiveTrueAndEmployer_companyName(String companyName ) {
 	   return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.getByActiveTrueAndEmployer_companyName(companyName), "Listelendi");
-		//return null;
 	}
 
 	
@@ -69,10 +67,9 @@ public class JobPostingManager implements JobPostingService{
 		return new SuccessDataResult<List<JobPosting>>(this.jobPostingDao.findAll(sort), "Yakın tarihli iş ilanları listelendi");
 	}
 	
-   //Dto yeni
 	@Override
 	public DataResult<List<JobPostingDto>> getJobPostingWithEmployerDetails() {
-		return new SuccessDataResult<List<JobPostingDto>>(this.jobPostingDao.getJobPostingWithEmployerDetails(),"iş ilanlari listelendi");
+		return new SuccessDataResult<List<JobPostingDto>>(this.jobPostingDao.getJobPostingWithEmployerDetails(),"Tüm Aktif iş ilanlari listelendi");
 	}
 
 }

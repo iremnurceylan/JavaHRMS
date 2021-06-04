@@ -16,7 +16,6 @@ public interface JobPostingService {
 	Result delete(JobPosting jobPosting);//iş ilanı silme
 	Result update(JobPosting jobPosting);//iş ilanı güncelleme
 	DataResult<List<JobPosting>> getAllSortedIsActiveTrueAndCreatedAt(); // Aktif İş ilanlarını tarihe gore yakından uzaga sıralasın
-
-	DataResult<List<JobPostingDto>> getJobPostingWithEmployerDetails();
+	DataResult<List<JobPostingDto>> getJobPostingWithEmployerDetails(); // Aktif iş ilanları ve detayları 
 
 }
